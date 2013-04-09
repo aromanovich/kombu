@@ -201,6 +201,7 @@ class Connection(object):
             self.uri_prefix = uri_prefix
 
         self.declared_entities = set()
+        self.block_for_ack = transport_options.get('block_for_ack', False)
 
     def switch(self, url):
         """Switch connection parameters to use a new URL (does not
